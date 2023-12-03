@@ -1,0 +1,18 @@
+/* javaScript */
+input {
+    width: 5rem;
+    height: 2rem;
+}
+
+.produkt {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: blueviolet;
+}
+.stuekzahl__container {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    padding: 1rem;
+}
