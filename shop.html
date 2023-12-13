@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,44 +11,105 @@
     <link rel="stylesheet" href="css/nav_footer.css">
     <link rel="stylesheet" href="css/js_css.css">
 </head>
+
 <body>
 
-        <div class="produkt ea">
-            <img src="" alt="">
-            <h2>Handtasche</h2>
-            <p>gsdgdgewzgfdzew</p>
-            <h3>12 €</h3>
-                <div class="stuekzahl__container">
-                    <h4>stückzahl</h4>
-                    <input type="number" id="quantity" name="quantity" min="0" max="3">
-                </div>
-                <form class="input">0</form>
-        </div> 
-       
-        <div class="produkt eb">
-            <img src="" alt="">
-            <h2>Handtasche</h2>
-            <p>gsdgdgewzgfdzew</p>
-            <h3>12 €</h3>
-                <div class="stuekzahl__container">
-                    <h4>stückzahl</h4>
-                    <input type="number" id="quantity" name="quantity" min="0" max="3">
-                </div>
+    <nav>
+        <div class="navbar" id="navbar">
+            <a href="#" class="logo"><img src="img/logoWhitepng.png" alt=""></a>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+            <div class="navbar-links" id="navbar-links">
+                <a href="shop.html">shop</a>
+                <a href="Produkte.html">Produkte</a>
+                <a href="ueberUns.html">Über uns</a>
+                <a href="Kontakt.html">Kontakt</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="produkt ec">
-            <img src="" alt="">
-            <h2>Handtasche</h2>
-            <p>gsdgdgewzgfdzew</p>
-            <h3>12 €</h3>
-                <div class="stuekzahl__container">
-                    <h4>stückzahl</h4>
-                    <input type="number" id="quantity" name="quantity" min="0" max="3">
-                </div>
+   
+    <div class="produkt ea">
+        <!-- Produkt 1 -->
+        <img src="bild-url-hier.jpg" alt="Handtasche">
+        <h2>Handtasche</h2>
+        <p>gsdgdgewzgfdzew</p>
+        <h3 class="preis">12 €</h3>
+        <div class="stuekzahl__container">
+            <h4>Stückzahl</h4>
+            <input type="number" class="quantity" name="quantity" min="0" max="3" onchange="updateSumme(this)">
         </div>
- 
+        <div class="input-summe">0</div>
+    </div>
 
-    <!-- <script src="js/script.js"></script> -->
-    <script src="js/script.js"></script>
+    <div class="produkt ea">
+        <!-- Produkt 2 -->
+        <img src="bild-url-hier.jpg" alt="Handtasche">
+        <h2>Handtasche</h2>
+        <p>gsdgdgewzgfdzew</p>
+        <h3 class="preis">12 €</h3>
+        <div class="stuekzahl__container">
+            <h4>Stückzahl</h4>
+            <input type="number" class="quantity" name="quantity" min="0" max="3" onchange="updateSumme(this)">
+        </div>
+        <div class="input-summe">0</div>
+    </div>
+
+    <div class="produkt ea">
+        <!-- Produkt 3 -->
+        <img src="bild-url-hier.jpg" alt="Handtasche">
+        <h2>Handtasche</h2>
+        <p>gsdgdgewzgfdzew</p>
+        <h3 class="preis">12 €</h3>
+        <div class="stuekzahl__container">
+            <h4>Stückzahl</h4>
+            <input type="number" class="quantity" name="quantity" min="0" max="3" onchange="updateSumme(this)">
+        </div>
+        <div class="input-summe">0</div>
+    </div>
+
+    <div id="gesamtSumme">Gesamtsumme: 0 €</div>
+
+    <script>
+        function toggleMenu() {
+            var navbarLinks = document.getElementById("navbar-links");
+            navbarLinks.classList.toggle("show");
+        }
+        function updateSumme(inputElement) {
+    var stueckzahl = inputElement.value;
+    var einzelPreis = 12; // Einzelpreis bleibt bei 12 €
+    var gesamtSumme = stueckzahl * einzelPreis;
+    inputElement.parentElement.nextElementSibling.innerText = 'Gesamtsumme: ' + gesamtSumme + ' €';
+
+    // Hier wird die Gesamtsumme aktualisiert
+    updateGesamtSumme();
+}
+summeElemente.forEach(function (element) {
+    console.log(element.textContent);
+    gesamtSumme += parseFloat(element.textContent);
+});
+
+        function updateGesamtSumme() {
+            var summeElemente = document.querySelectorAll('.input-summe');
+            var gesamtSumme = 0;
+
+            summeElemente.forEach(function (element) {
+                gesamtSumme += parseFloat(element.textContent);
+            });
+
+            // Hier wird die Gesamtsumme angezeigt
+            document.getElementById('gesamtSumme').innerText = 'Gesamtsumme: ' + gesamtSumme.toFixed(2) + ' €';
+        }
+
+        // Änderung für mehrere Produkte
+        var inputElements = document.querySelectorAll('.quantity');
+
+        inputElements.forEach(function (inputElement) {
+            inputElement.addEventListener('change', function () {
+                updateSumme(inputElement);
+            });
+        });
+    </script>
+
 </body>
+
 </html>
