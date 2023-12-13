@@ -1,4 +1,4 @@
-/* nav */
+/* nav
 .nav__space {
     height: 4.5rem;
 }
@@ -43,11 +43,102 @@ nav {
     height: 3rem;
 }
 
+
+
 @media screen and (max-width: 800px) {
    
 }
 
+ */
 
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+nav {
+    background-image: url(/img/bundeOrganischeTextur.JPG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar img {
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-left: 1rem;
+  }
+  
+  .navbar-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+  }
+  .navbar-links a:hover {
+    color: rgba(255, 255, 255, 0.584);
+  }
+  
+  .menu-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      margin-top: 0.8rem;
+      width: 100%;
+      position: absolute;
+      padding-top: 1rem;
+      top: 70px;
+      left: 0;
+      background-image: url(/img/bundeOrganischeTextur.JPG);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  
+    .navbar-links.show {
+      display: flex;
+    }
+  
+    .navbar-links a {
+      padding: 1em;
+      text-align: center;
+      width: 100%;
+      color: rgb(255, 255, 255);
+    }
+    .navbar-links a:hover {
+        color: rgba(255, 255, 255, 0.494);
+      }
+  
+    .menu-icon {
+      display: block;
+      margin-right: 2rem;
+    }
+  }
+  
 
 
 
